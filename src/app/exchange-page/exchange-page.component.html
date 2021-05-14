@@ -1,0 +1,19 @@
+<div class="page-container">
+    <div class="container">
+        <div class="chat-partner">
+            <h2 *ngIf="chatPartnerName">{{ chatPartnerName }}</h2>
+        </div>
+        <div class="messages">
+            <div class="msg-wrapper" *ngFor="let msg of allMessages">
+                <div class="msg" [class.received]="msg.received">
+                    <p>{{ msg.text }}</p>
+                    <span class="time" [class.received]="msg.received">{{ msg.date | date: 'HH:mm' }}</span>
+                </div>
+            </div>
+        </div>
+        <div class="form">
+            <textarea [formControl]="messageControl"></textarea>
+            <button (click)="onSend()">send</button>
+        </div>
+    </div>
+</div>

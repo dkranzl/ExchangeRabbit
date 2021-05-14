@@ -1,0 +1,10 @@
+<div class="container" *ngIf="value">
+    <h1>{{ deviceName }}</h1>
+    <ngx-qrcode
+        class="qr-code"
+        [elementType]="elementType"
+        [errorCorrectionLevel]="correctionLevel"
+        [value]="value"
+        cssClass="bshadow"></ngx-qrcode>
+    <p class="raw-link">{{ value }}</p>
+</div>

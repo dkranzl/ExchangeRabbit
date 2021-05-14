@@ -1,9 +1,14 @@
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
+declare var window: {[key: string]: {[key: string]: any}};
 
 export const environment = {
-  production: false
+  production: false,
+  appUrl: window["env"]["appUrl"] || 'http://localhost:4200',
+  peerjsHost: window["env"]["peerjsHost"] || 'localhost',
+  peerjsPort: window["env"]["peerjsPort"] || 9000,
+  peerjsPath: window["env"]["peerjsPath"] || '/myapp'
 };
 
 /*
